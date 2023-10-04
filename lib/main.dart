@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/ui/pages/home.dart';
 import 'package:news_app/provider/theme_provider.dart';
 import 'package:news_app/shared/themes/themes.dart';
+import 'package:news_app/ui/pages/news.dart';
 import 'package:news_app/ui/pages/splash.dart';
 import 'package:provider/provider.dart';
 
@@ -45,10 +46,11 @@ class _MyAppState extends State<MyApp> {
             title: 'Newspedia',
             theme: Themes.themeData(themeProvider.getDarkTheme, context),
             initialRoute: '/',
-            routes:{
-              '/' : (context) => const Splash(),
-              '/home' : (context) => const MyHomePage(title: 'Newspedia')
-            } ,
+            routes: {
+              '/': (context) => const Splash(),
+              '/home': (context) => const MyHomePage(title: 'Newspedia'),
+              '/news': (context) => const News()
+            },
           );
         },
       ),
