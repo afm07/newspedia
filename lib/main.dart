@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/ui/pages/home.dart';
 import 'package:news_app/provider/theme_provider.dart';
 import 'package:news_app/shared/themes/themes.dart';
+import 'package:news_app/ui/pages/splash.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -43,7 +44,11 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Newspedia',
             theme: Themes.themeData(themeProvider.getDarkTheme, context),
-            home: const MyHomePage(title: 'Flutter Demo Home Page'),
+            initialRoute: '/',
+            routes:{
+              '/' : (context) => const Splash(),
+              '/home' : (context) => const MyHomePage(title: 'Newspedia')
+            } ,
           );
         },
       ),

@@ -19,7 +19,7 @@ class AppHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const AppIcon(title: 'Newspedia'),
+          const AppIcon(title: 'Newspedia',iconSize: 24,fontSize: 22,),
           IconButton(
             icon: Icon(
               themeState.getDarkTheme

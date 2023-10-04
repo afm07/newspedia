@@ -3,16 +3,26 @@ import 'package:news_app/shared/themes/styles.dart';
 
 class AppIcon extends StatelessWidget {
   final String title;
+  final double iconSize;
+  final double fontSize;
 
-  const AppIcon({Key? key, required this.title}) : super(key: key);
+  const AppIcon(
+      {
+        Key? key,
+        required this.title,
+        required this.iconSize,
+        required this.fontSize
+      }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Icon(
+        Icon(
           Icons.menu_book_rounded,
-          size: 24,
+          size: iconSize,
         ),
         const SizedBox(
           width: 5,
@@ -20,7 +30,7 @@ class AppIcon extends StatelessWidget {
         Text(
           title,
           style: fontStyle.copyWith(
-            fontSize: 20,
+            fontSize: fontSize,
             fontWeight: semiBold,
           )
         ),
