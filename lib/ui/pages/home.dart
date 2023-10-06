@@ -4,7 +4,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:news_app/models/news_model.dart';
-import 'package:news_app/ui/pages/news.dart';
 import 'package:news_app/ui/widget/carousel.dart';
 import 'package:news_app/ui/widget/news_tag.dart';
 
@@ -180,10 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.pushNamed(
                 context,
                 '/news',
-                arguments: News(
-                  newsModel: newsModel,
-                  selected: index,
-                ),
+                arguments: {'url': news.url},
               );
             },
             child: Container(
