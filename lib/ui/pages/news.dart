@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/models/news_model.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-class News extends StatelessWidget {
-  final List<NewsModel>? newsModel;
-  final dynamic selected;
-
+class News extends StatefulWidget {
   const News({
     Key? key,
-    this.newsModel,
-    this.selected,
   }) : super(key: key);
 
   @override
+  State<News> createState() => _NewsState();
+}
+
+class _NewsState extends State<News> {
+  @override
   Widget build(BuildContext context) {
-    var selectedNews = newsModel;
-    if (selectedNews != null) {
-      var newsId = selectedNews[selected];
-    }
-    return const Center();
+    final routes = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
+
+    WebViewController controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.disabled)
+      ..loadRequest(Uri.parse(routes['url']));
+
+    return Scaffold(
+      appBar: AppBar(
+        leading: const BackButton(),
+      ),
+      body: WebViewWidget(controller: controller),
+    );
   }
 }
