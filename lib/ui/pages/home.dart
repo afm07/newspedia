@@ -171,6 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget buildNewsList(List<NewsModel> newsModel) => ListView.builder(
         shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: newsModel.length,
         itemBuilder: (context, index) {
           final news = newsModel[index];
