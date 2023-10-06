@@ -5,7 +5,7 @@ class Themes {
     return ThemeData(
         appBarTheme: AppBarTheme(
             backgroundColor:
-                isDarkTheme ? const Color(0xFF121212) : const Color(0xFFE7E7E7),
+                isDarkTheme ? const Color(0xFF121212) : const Color(0xFFFFFFFF),
             iconTheme: IconThemeData(
               color: isDarkTheme
                   ? const Color(0xFFE7E7E7)
